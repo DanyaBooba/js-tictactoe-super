@@ -14,6 +14,8 @@
     padding: 0;
     border: none;
     font: inherit;
+    font-family: monospace;
+    font-size: 1rem;
     color: inherit;
     background-color: transparent;
     cursor: pointer;
@@ -30,4 +32,16 @@
     padding: .5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.field .field__item button:disabled {
+    cursor: auto !important;
+}
+
+.field .field__item button.button-x:disabled {
+    background-color: #ee525388;
+}
+
+.field .field__item button.button-o:disabled {
+    background-color: #54a0ff88;
 }
