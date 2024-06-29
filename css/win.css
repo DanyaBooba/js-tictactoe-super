@@ -1,0 +1,65 @@
+.win {
+    display: block;
+    opacity: 1;
+    transition: .7s opacity cubic-bezier(0, 0, 1, 1);
+
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #12312399;
+}
+
+.win:has(.win__content-x) {
+    background-color: #440f26cc !important;
+}
+
+.win:has(.win__content-o) {
+    background-color: #0f2d44cc !important;
+}
+
+.win:has(.win__content-draw) {
+    background-color: #171717cc !important;
+}
+
+.win.display-none {
+    display: none;
+    opacity: 0;
+    transition: .7s opacity cubic-bezier(0, 0, 1, 1);
+    z-index: -1;
+}
+
+.win .win__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+
+.win .win__content h2 {
+    font-size: 3rem;
+    font-family: monospace;
+}
+
+.win .win__content button {
+    z-index: 500;
+    border-radius: 8px;
+    cursor: pointer !important;
+    padding: 1.5rem 0;
+    border: none !important;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    .win .win__content {
+        margin-top: calc(100vh / 2 - 10%);
+    }
+}

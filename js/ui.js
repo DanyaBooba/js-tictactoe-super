@@ -14,6 +14,7 @@ class Interface {
         const win = Game.win
         if (win !== false) {
             console.log('ПОБЕДА', win)
+            win === 1 ? Win.winX() : Win.winO()
         }
         else {
             const busy = Game.busy

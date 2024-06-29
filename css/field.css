@@ -41,6 +41,7 @@
 .field .field__item button:disabled {
     cursor: auto !important;
     border-bottom: none;
+    background-color: #ffffff88;
 }
 
 .field .field__item button.button-x:disabled {
