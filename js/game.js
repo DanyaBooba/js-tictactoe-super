@@ -70,46 +70,25 @@ class Field {
     }
 
     get winDiag1() {
-        $first = 0;
-        for ($i = 0; $i < $this->len; $i++) {
-            if ($this->matrix[$i][$i] == 0) {
-                return false;
-            }
-
-            $first = $first == 0 ? $this->matrix[$i][$i] : $first;
-
-            if ($this->matrix[$i][$i] != $first) {
-                return false;
-            }
+        let firstElement = -1
+        for (let x = 0; x < this.size; x++) {
+            if (this.field[x][x] === -1) return false
+            firstElement = firstElement === -1 ? this.field[x][x] : firstElement;
+            if (this.field[x][x] !== firstElement) return false
         }
 
-        return [
-            "status" => true,
-            "win" => $first
-        ];
+        return firstElement
     }
 
     get winDiag2() {
-        $first = 0;
-        $i = 0;
-        for ($j = $this->len - 1; $j >= 0; $j--) {
-            if ($this->matrix[$i][$j] == 0) {
-                return false;
-            }
-
-            $first = $first == 0 ? $this->matrix[$i][$j] : $first;
-
-            if ($this->matrix[$i][$j] != $first) {
-                return false;
-            }
-
-            $i += 1;
+        let firstElement = -1
+        for (let y = this.size - 1,  x = 0; y >= 0; y--, x++) {
+            if (this.field[x][y] === -1) return false
+            firstElement = firstElement === -1 ? this.field[x][y] : firstElement
+            if (this.field[x][y] !== firstElement) return false
         }
 
-        return [
-            "status" => true,
-            "win" => $first
-        ];
+        return firstElement
     }
 }
 
@@ -128,6 +107,10 @@ class TicTacToe {
         return this.field.fieldBusy
     }
 
+    get status() {
+        return this.move ? 'X' : 'O'
+    }
+
     get win() {
         const winRow = this.field.winRow
         if (winRow !== false) return winRow
@@ -144,7 +127,3 @@ class TicTacToe {
         return false
     }
 }
-
-const Game = new TicTacToe()
-
-const isWin = () => Game.win !== false

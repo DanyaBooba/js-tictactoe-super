@@ -8,3 +8,20 @@ p {
     font-family: monospace;
     font-size: 1rem;
 }
+
+p span {
+    margin-left: .5rem;
+    border-radius: 8px;
+    border: 1px solid #123;
+    padding: .7rem .7rem;
+}
+
+p span.status-x {
+    background-color: #ee525388;
+    border: .1rem solid #ee525333;
+}
+
+p span.status-o {
+    background-color: #54a0ff88;
+    border: .1rem solid #54a0ff33;
+}

@@ -1,2 +1,0 @@
-updateUI()
-initField()
