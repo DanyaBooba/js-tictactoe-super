@@ -12,16 +12,8 @@ class Interface {
 
     win() {
         const win = Game.win
-        if (win !== false) {
-            console.log('ПОБЕДА', win)
-            win === 1 ? Win.winX() : Win.winO()
-        }
-        else {
-            const busy = Game.busy
-            if (busy) {
-                console.log('НИЧЬЯ')
-            }
-        }
+        if (win !== false) win === 1 ? Win.winX() : Win.winO()
+        else Game.busy ? Win.draw() : null
     }
 
     buttonHTML(id) {
@@ -54,6 +46,7 @@ class Interface {
 
     updateTitle() {
         document.querySelector('h1').textContent = 'Крестики Нолики на JavaScript!'
+        document.title = 'Крестики Нолики на JavaScript!'
     }
 
     updateCurrentMove() {

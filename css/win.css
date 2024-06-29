@@ -1,7 +1,6 @@
 .win {
-    display: block;
+    /* display: block; */
     opacity: 1;
-    transition: .7s opacity cubic-bezier(0, 0, 1, 1);
 
     z-index: 100;
     width: 100vw;
@@ -11,6 +10,19 @@
     left: 0;
 
     background-color: #12312399;
+    transition: .7s opacity;
+}
+
+.win:not(.display-none) {
+    opacity: 1;
+    z-index: 100;
+    transition: .7s opacity;
+}
+
+.win.display-none {
+    opacity: 0;
+    z-index: -1;
+    transition: .7s opacity;
 }
 
 .win:has(.win__content-x) {
@@ -23,13 +35,6 @@
 
 .win:has(.win__content-draw) {
     background-color: #171717cc !important;
-}
-
-.win.display-none {
-    display: none;
-    opacity: 0;
-    transition: .7s opacity cubic-bezier(0, 0, 1, 1);
-    z-index: -1;
 }
 
 .win .win__content {
