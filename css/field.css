@@ -1,0 +1,33 @@
+.field {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.field .field__item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.field .field__item button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+    width: 2rem !important;
+    height: 2.5rem !important;
+
+    border-bottom: .1rem #123 solid;
+    background-color: #fff;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: .5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
